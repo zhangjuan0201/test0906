@@ -1,0 +1,38 @@
+
+#pragma once
+ 
+ 
+//坐标原点在左上角
+//x是向右   y是向下
+typedef struct Position{
+	int x;
+	int y;
+}Position;
+ 
+//链表结点（单向）
+typedef struct Node{
+	struct Node *pNext;
+	Position data;
+}Node;
+ 
+//方向 （枚举列举所有可能）
+typedef enum Direction{
+	UP, DOWN, LEFT, RIGHT
+}Direction;
+ 
+//蛇的结构
+typedef struct Snake{
+	Node *pHead;
+	Direction direction;
+}Snake;
+ 
+//游戏用到的其他非独立字段
+typedef struct Game{
+	Snake snake;
+	Position foodPosition;
+	int sorePerfood;
+        int core;
+	int speed;
+	int width;	// 宽
+	int height;	// 高
+}Game
